@@ -55,9 +55,24 @@ public class TileScript : MonoBehaviour {
             {
                 if (terrainMap[x, y] == 1)
                 {
-                    botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
+                    if (y < height - 1)
+                    {
+                        if (terrainMap[x, y + 1] == 1)
+                        {
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 2)]);
+                        }
+                        else
+                        {
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(2, 4)]);
+                        }
+                    }
+                    else
+                    {
+                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 2)]);
+                    }
                 }
-                topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 4)]);
+                else
+                    botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
             }
         }
 
@@ -99,7 +114,7 @@ public class TileScript : MonoBehaviour {
                     }
                     else
                     {
-                        neighb++;
+                        //neighb++;
                     }
                 }
 
