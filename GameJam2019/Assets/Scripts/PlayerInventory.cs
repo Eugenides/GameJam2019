@@ -96,12 +96,20 @@ public class PlayerInventory : MonoBehaviour {
         }
     }
 
+    //Retrieves the inventory of the player object.
+    public List<Resource> GetPlayerInventory()
+    {
+        return mResourceList;
+    }
+
+    //Adds weight (in kg.) to the current value of the Backpack.
     public void AddWeightToBackpack(float weightToAdd)
     {
         if(currBackpackCapacity + weightToAdd < maxBackpackCapacity)
             currBackpackCapacity += weightToAdd;
     }
 
+    //Increases the total capacity of the Backpack.
     public void IncreaseBackpackCapacity(float weightToAdd)
     {
         maxBackpackCapacity += weightToAdd;
