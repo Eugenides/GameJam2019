@@ -123,9 +123,12 @@ GameObject:
   - component: {fileID: 154812460}
   - component: {fileID: 154812462}
   - component: {fileID: 154812461}
+  - component: {fileID: 154812465}
+  - component: {fileID: 154812464}
+  - component: {fileID: 154812463}
   m_Layer: 0
   m_Name: Tilemap (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +180,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -221,59 +224,61 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &277248028
-GameObject:
+--- !u!66 &154812463
+CompositeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 277248030}
-  - component: {fileID: 277248029}
-  m_Layer: 0
-  m_Name: TileGen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &277248029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 277248028}
+  m_GameObject: {fileID: 154812459}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8042cf4faaf938e47b6b6e004e3637b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iniChance: 25
-  birthLimit: 3
-  deathLimit: 2
-  numR: 4
-  tmpSize: {x: 100, y: 100, z: 0}
-  topMap: {fileID: 326734672}
-  botMap: {fileID: 154812462}
-  topTile:
-  - {fileID: 11400000, guid: 8fad62b1290517f4196b99f98adfaae7, type: 2}
-  - {fileID: 11400000, guid: 2e7d41413f4ec9e46b5525d939653622, type: 2}
-  - {fileID: 11400000, guid: 95fe2ed1d561f984293041375706b56f, type: 2}
-  - {fileID: 11400000, guid: 71e793bfbb8cde84899a85b156ad225b, type: 2}
-  botTile: {fileID: 11400000, guid: 388201e8aaf96e640aaadc3751d8fa93, type: 2}
---- !u!4 &277248030
-Transform:
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 154812465}
+    m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+--- !u!50 &154812464
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 277248028}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 154812459}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &154812465
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 154812459}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &326734669
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +343,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -501,3 +506,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1993857721
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422334898817144, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487466282168024, guid: 91e5aeac171512641bdcc8b81db174b1,
+        type: 2}
+      propertyPath: topMap
+      value: 
+      objectReference: {fileID: 326734672}
+    - target: {fileID: 114487466282168024, guid: 91e5aeac171512641bdcc8b81db174b1,
+        type: 2}
+      propertyPath: botMap
+      value: 
+      objectReference: {fileID: 154812462}
+    - target: {fileID: 114035041862873850, guid: 91e5aeac171512641bdcc8b81db174b1,
+        type: 2}
+      propertyPath: gridLayout
+      value: 
+      objectReference: {fileID: 957591543}
+    - target: {fileID: 114035041862873850, guid: 91e5aeac171512641bdcc8b81db174b1,
+        type: 2}
+      propertyPath: topMap
+      value: 
+      objectReference: {fileID: 326734672}
+    - target: {fileID: 114035041862873850, guid: 91e5aeac171512641bdcc8b81db174b1,
+        type: 2}
+      propertyPath: botMap
+      value: 
+      objectReference: {fileID: 154812462}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91e5aeac171512641bdcc8b81db174b1, type: 2}
+  m_IsPrefabAsset: 0
