@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 154812463}
   m_Layer: 0
   m_Name: Tilemap (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277248030}
   - component: {fileID: 277248029}
+  - component: {fileID: 277248031}
   m_Layer: 0
   m_Name: TileGen
   m_TagString: Untagged
@@ -332,6 +333,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277248031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277248028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3795ec596c32b454dba9e6d922a1d227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridLayout: {fileID: 957591543}
+  topMap: {fileID: 326734672}
+  botMap: {fileID: 154812462}
+  bridgeTile: {fileID: 11400000, guid: 95fe2ed1d561f984293041375706b56f, type: 2}
 --- !u!1 &326734669
 GameObject:
   m_ObjectHideFlags: 0
