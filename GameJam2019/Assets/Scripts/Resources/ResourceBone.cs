@@ -12,6 +12,7 @@ public class ResourceBone : MonoBehaviour
     void Start()
     {
         mBoneResource = new Bone();
+        mBoneResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

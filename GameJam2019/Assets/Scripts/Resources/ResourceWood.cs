@@ -9,8 +9,10 @@ public class ResourceWood : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        mWoodResource = new Wood();	
-	}
+
+        mWoodResource = new Wood();
+        mWoodResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
+    }
 	
 	// Update is called once per frame
 	void Update () {

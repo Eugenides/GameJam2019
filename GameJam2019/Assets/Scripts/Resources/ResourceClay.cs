@@ -12,6 +12,7 @@ public class ResourceClay : MonoBehaviour
     void Start()
     {
         mClayResource = new Clay();
+        mClayResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

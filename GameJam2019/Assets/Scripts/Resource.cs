@@ -19,6 +19,9 @@ public class Resource {
         CLAY,
     }
 
+    //The respected image for the resource.
+    protected Sprite icon;
+
     //Every inherited child will have a type associated with it and a utility function to retrieve it.
     protected ResourceType type;
 
@@ -27,6 +30,12 @@ public class Resource {
 
     //Mass of the resource
     protected float weight;
+
+    //Sets the Icon of the resource.
+    public virtual void SetIcon(Sprite i)
+    {
+        icon = i;
+    }
 
     //Retrieve what type of Resource enum this object is.
     public virtual ResourceType GetResourceType() {

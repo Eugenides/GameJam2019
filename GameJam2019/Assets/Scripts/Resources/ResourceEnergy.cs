@@ -12,6 +12,7 @@ public class ResourceEnergy : MonoBehaviour
     void Start()
     {
         mEnergyResource = new Energy();
+        mEnergyResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

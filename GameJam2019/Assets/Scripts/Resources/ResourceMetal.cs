@@ -12,6 +12,7 @@ public class ResourceMetal : MonoBehaviour
     void Start()
     {
         mMetalResource = new Metal();
+        mMetalResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

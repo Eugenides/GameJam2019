@@ -12,6 +12,7 @@ public class ResourceOrganics : MonoBehaviour
     void Start()
     {
         mOrganicsResource = new Organics();
+        mOrganicsResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

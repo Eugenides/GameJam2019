@@ -12,6 +12,7 @@ public class ResourceStone : MonoBehaviour
     void Start()
     {
         mStoneResource = new Stone();
+        mStoneResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

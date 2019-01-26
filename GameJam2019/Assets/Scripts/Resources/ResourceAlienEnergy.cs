@@ -12,6 +12,7 @@ public class ResourceAlienEnergy : MonoBehaviour
     void Start()
     {
         mAlienEnergyResource = new AlienEnergy();
+        mAlienEnergyResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

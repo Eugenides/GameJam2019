@@ -12,6 +12,7 @@ public class ResourceGlass : MonoBehaviour
     void Start()
     {
         mGlassResource = new Glass();
+        mGlassResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

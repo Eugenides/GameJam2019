@@ -12,6 +12,7 @@ public class ResourceTwine : MonoBehaviour
     void Start()
     {
         mTwineResource = new Twine();
+        mTwineResource.SetIcon(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame
