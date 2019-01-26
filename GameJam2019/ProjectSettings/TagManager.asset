@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wood
+  - Stone
+  - Energy
+  - Metal
+  - Organics
+  - Twine
+  - AlienEnergy
+  - Bone
+  - Glass
+  - Clay
   layers:
   - Default
   - TransparentFX
@@ -13,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Resource
   - 
   - 
   - 
