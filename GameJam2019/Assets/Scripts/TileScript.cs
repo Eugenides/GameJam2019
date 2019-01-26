@@ -27,6 +27,8 @@ public class TileScript : MonoBehaviour {
     int width;
     int height;
 
+    public int numOfGrassland;
+
     void Start()
     {
         doSim(numR);
@@ -49,6 +51,22 @@ public class TileScript : MonoBehaviour {
             terrainMap = genTilePos(terrainMap);
         }
 
+        bool repeat = true;
+        Vector3Int tempVec;
+        do
+        {
+            tempVec = new Vector3Int(Random.Range(0, width), Random.Range(0, height), 0);
+            if (terrainMap[tempVec.x, tempVec.y] == 1)
+            {
+                setBiome(tempVec.x, tempVec.y, 2);
+                numOfGrassland--;
+                if (numOfGrassland == 0)
+                {
+                    repeat = false;
+                }
+            }
+        } while (repeat == true);
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -59,23 +77,40 @@ public class TileScript : MonoBehaviour {
                     {
                         if (terrainMap[x, y + 1] == 1)
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 2)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 4)]);
                         }
                         else
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(2, 4)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(4, 8)]);
                         }
                     }
                     else
                     {
-                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 2)]);
+                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 4)]);
+                    }
+                }
+                else if (terrainMap[x, y] == 2)
+                {
+                    if (y < height - 1)
+                    {
+                        if (terrainMap[x, y + 1] == 2)
+                        {
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(8, 12)]);
+                        }
+                        else
+                        {
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(12, 16)]);
+                        }
+                    }
+                    else
+                    {
+                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(8, 12)]);
                     }
                 }
                 else
                     botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
             }
         }
-
 
     }
 
@@ -143,5 +178,70 @@ public class TileScript : MonoBehaviour {
 
         }
         return newMap;
+    }
+
+    public void setBiome(int xPos, int yPos, int biomeType)
+    {
+        terrainMap[xPos, yPos] = 2;
+
+        if (xPos < width - 1)
+        {
+            if (terrainMap[xPos + 1, yPos] == 1)
+            {
+                setBiome(xPos + 1, yPos, biomeType);
+            }
+        }
+        if (xPos > 1)
+        {
+            if (terrainMap[xPos - 1, yPos] == 1)
+            {
+                setBiome(xPos - 1, yPos, biomeType);
+            }
+        }
+
+        if (xPos < width - 1 && yPos < height - 1)
+        {
+            if (terrainMap[xPos + 1, yPos + 1] == 1)
+            {
+                setBiome(xPos + 1, yPos + 1, biomeType);
+            }
+        }
+        if (xPos > 1 && yPos > 1)
+        {
+            if (terrainMap[xPos - 1, yPos - 1] == 1)
+            {
+                setBiome(xPos - 1, yPos - 1, biomeType);
+            }
+        }
+
+        if (xPos < width - 1 && yPos > 1)
+        {
+            if (terrainMap[xPos + 1, yPos - 1] == 1)
+            {
+                setBiome(xPos + 1, yPos - 1, biomeType);
+            }
+        }
+        if (xPos > 1 && yPos < height - 1)
+        {
+            if (terrainMap[xPos - 1, yPos + 1] == 1)
+            {
+                setBiome(xPos - 1, yPos + 1, biomeType);
+            }
+        }
+
+        if (yPos > 1)
+        {
+            if (terrainMap[xPos, yPos - 1] == 1)
+            {
+                setBiome(xPos, yPos - 1, biomeType);
+            }
+        }
+        if (yPos < height - 1)
+        {
+            if (terrainMap[xPos, yPos + 1] == 1)
+            {
+                setBiome(xPos, yPos + 1, biomeType);
+            }
+        }
     }
 }

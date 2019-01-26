@@ -319,7 +319,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e7d41413f4ec9e46b5525d939653622, type: 2}
   - {fileID: 11400000, guid: 95fe2ed1d561f984293041375706b56f, type: 2}
   - {fileID: 11400000, guid: 71e793bfbb8cde84899a85b156ad225b, type: 2}
+  - {fileID: 11400000, guid: 24f955b0fd410aa4aa519a18cd669c8b, type: 2}
+  - {fileID: 11400000, guid: 243b07f84311eca4b95f16e1d0bce293, type: 2}
+  - {fileID: 11400000, guid: ccd5449edc49ae040b4eec79981215c7, type: 2}
+  - {fileID: 11400000, guid: 38df3b2bba1b6694a95af74b2363cfbf, type: 2}
+  - {fileID: 11400000, guid: 3154c5ba0ea7f5e489f7b3e7a549b844, type: 2}
+  - {fileID: 11400000, guid: e4cc0b8a4d0a7434ca6c542b00647606, type: 2}
+  - {fileID: 11400000, guid: b233ffc289b85ae47ad8c060e1d38a4c, type: 2}
+  - {fileID: 11400000, guid: aac55e94187460549b262f6b942b32aa, type: 2}
+  - {fileID: 11400000, guid: 4e620b13049b1364b92a8daa83d6c32c, type: 2}
+  - {fileID: 11400000, guid: 72ae296e2a0708545a993185eb8f4695, type: 2}
+  - {fileID: 11400000, guid: 28fb49323513ce6488870626cd27e2b3, type: 2}
+  - {fileID: 11400000, guid: 3db00b790a4a0f343b13db88fab51fc7, type: 2}
   botTile: {fileID: 11400000, guid: 388201e8aaf96e640aaadc3751d8fa93, type: 2}
+  numOfGrassland: 1
 --- !u!4 &277248030
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +360,9 @@ MonoBehaviour:
   gridLayout: {fileID: 957591543}
   topMap: {fileID: 326734672}
   botMap: {fileID: 154812462}
-  bridgeTile: {fileID: 11400000, guid: 95fe2ed1d561f984293041375706b56f, type: 2}
+  bridgeTile: {fileID: 11400000, guid: eb8cb22b32736da469fd700b876036d0, type: 2}
+  bridgeTile2: {fileID: 11400000, guid: 3bdc53a4e4ef0a14a80e8c0afddc2052, type: 2}
+  regularTile: {fileID: 11400000, guid: 8fad62b1290517f4196b99f98adfaae7, type: 2}
 --- !u!1 &326734669
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: DefaultPlanetTile3
+  m_Name: DefaultPlanetTileCliff2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 0c0181058f622114eaa985bed41caae7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45f019eca0c763a4c8937caa1e3faa91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
