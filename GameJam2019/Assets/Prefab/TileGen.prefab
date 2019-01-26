@@ -108,4 +108,15 @@ MonoBehaviour:
   topMap: {fileID: 0}
   botMap: {fileID: 0}
   botTile: {fileID: 11400000, guid: 388201e8aaf96e640aaadc3751d8fa93, type: 2}
+  resources:
+  - {fileID: 1552012802864218, guid: 628d04809cc0bb74db1a037130157c68, type: 2}
+  - {fileID: 1080144542678134, guid: 185054db62b18eb47a28e79a7b5ea8db, type: 2}
+  - {fileID: 1140517881527038, guid: 21aee47763600ed4da5ca9b1a8efcccf, type: 2}
+  - {fileID: 1269015880558012, guid: ff75830f7a028af44bf2fab007cb0c28, type: 2}
+  - {fileID: 1284384227396180, guid: 5a05b0f6b66b7a24caee242e25f5d01f, type: 2}
+  - {fileID: 1671662697340384, guid: 9352e6bccc83f9c42804373e60f41103, type: 2}
+  - {fileID: 1202730712648532, guid: a879a83f4a8b0b44c9f1ce19e3a1cb2b, type: 2}
+  - {fileID: 1096486321538900, guid: b12edd7c6db2cd340a7b4c022d9d3360, type: 2}
+  - {fileID: 1624334397974332, guid: bc97c0dead55b9b43af4e143b31cad4e, type: 2}
+  - {fileID: 1627421839737390, guid: c69bf0b92dd7c3b4fadb946ed41edca1, type: 2}
   numOfGrassland: 1

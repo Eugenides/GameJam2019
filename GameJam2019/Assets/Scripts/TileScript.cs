@@ -18,12 +18,15 @@ public class TileScript : MonoBehaviour {
     [Range(1, 10)]
     public int numR;
     private int count = 0;
-
+    public GridLayout gridLayout;
     private int[,] terrainMap;
     public Vector3Int tmpSize;
     public Tilemap topMap;
     public Tilemap botMap;
     public Tile botTile;
+
+    public GameObject[] resources = new GameObject[10];
+    public int[] numResources = new int[10];
 
     int width;
     int height;
@@ -50,6 +53,12 @@ public class TileScript : MonoBehaviour {
         for (int i = 0; i < nu; i++)
         {
             terrainMap = genTilePos(terrainMap);
+        }
+
+
+        for (int i = 0; i < numResources.Length; i++)
+        {
+            numResources[i] = Random.Range(5, 16);
         }
 
         bool repeat = true;
@@ -113,6 +122,87 @@ public class TileScript : MonoBehaviour {
             }
         }
 
+        for(int i = 0; i < numResources.Length; i++)
+        {
+            repeat = true;
+            do
+            {
+                tempVec = new Vector3Int(Random.Range(0, width), Random.Range(0, height), 0);
+                if (terrainMap[tempVec.x, tempVec.y] != 0)
+                {
+                    Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2, -tempVec.y + height / 2, 0), Quaternion.identity);
+                    numResources[i]--;
+                    if (tempVec.x < width - 1)
+                    {
+                        if (terrainMap[tempVec.x + 1, tempVec.y] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 - 1, -tempVec.y + height / 2, 0), Quaternion.identity);
+                        }
+                    }
+                    if (tempVec.x > 1)
+                    {
+                        if (terrainMap[tempVec.x - 1, tempVec.y] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 + 1, -tempVec.y + height / 2, 0), Quaternion.identity);
+                        }
+                    }
+
+                    if (tempVec.x < width - 1 && tempVec.y < height - 1)
+                    {
+                        if (terrainMap[tempVec.x + 1, tempVec.y + 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 - 1, -tempVec.y + height / 2 - 1, 0), Quaternion.identity);
+                        }
+                    }
+                    if (tempVec.x > 1 && tempVec.y > 1)
+                    {
+                        if (terrainMap[tempVec.x - 1, tempVec.y - 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 + 1, -tempVec.y + height / 2 + 1, 0), Quaternion.identity);
+                        }
+                    }
+
+                    if (tempVec.x < width - 1 && tempVec.y > 1)
+                    {
+                        if (terrainMap[tempVec.x + 1, tempVec.y - 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 - 1, -tempVec.y + height / 2 + 1, 0), Quaternion.identity);
+                        }
+                    }
+                    if (tempVec.x > 1 && tempVec.y < height - 1)
+                    {
+                        if (terrainMap[tempVec.x - 1, tempVec.y + 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2 + 1, -tempVec.y + height / 2 - 1, 0), Quaternion.identity);
+                        }
+                    }
+
+                    if (tempVec.y > 1)
+                    {
+                        if (terrainMap[tempVec.x, tempVec.y - 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2, -tempVec.y + height / 2 + 1, 0), Quaternion.identity);
+                        }
+                    }
+                    if (tempVec.y < height - 1)
+                    {
+                        if (terrainMap[tempVec.x, tempVec.y + 1] == 1)
+                        {
+                            Instantiate(resources[i], new Vector3Int(-tempVec.x + width / 2, -tempVec.y + height / 2 - 1, 0), Quaternion.identity);
+                        }
+                    }
+                }
+                if(numResources[i] == 0)
+                {
+                    repeat = false;
+                }
+
+            } while (repeat == true);
+        }
+        for (int i = 0; i < numResources.Length; i++)
+        {
+            numResources[i] = Random.Range(5, 16);
+        }
     }
 
     public void initPos()
