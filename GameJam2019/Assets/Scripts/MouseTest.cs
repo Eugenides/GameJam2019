@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;  
 
-public class MouseTest : MonoBehaviour {
+public class MouseTest : MonoBehaviour
+{
+    public TileList tileList;
 
     public GridLayout gridLayout;
     public Tilemap topMap;
@@ -42,7 +44,14 @@ public class MouseTest : MonoBehaviour {
 
                 if (topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) != null && topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) != bridgeTile && topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) != bridgeTile2)
                 {
-                    topMap.SetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z), regularTile);
+                    if (topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[4] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[5] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[6] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[7])
+                    {
+                        topMap.SetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z), tileList.topTile[Random.Range(0, 4)]);
+                    }
+                    else if (topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[12] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[13] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[14] || topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == tileList.topTile[15])
+                    {
+                        topMap.SetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z), tileList.topTile[Random.Range(8, 12)]);   
+                    }
                 }
                 if(topMap.GetTile(new Vector3Int(cellPosition.x, cellPosition.y + 1, cellPosition.z)) == bridgeTile)
                 {

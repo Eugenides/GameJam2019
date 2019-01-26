@@ -6,6 +6,8 @@ using UnityEditor;
 
 public class TileScript : MonoBehaviour {
 
+    public TileList tileList;
+
     [Range(0, 100)]
     public int iniChance;
     [Range(1, 8)]
@@ -21,7 +23,6 @@ public class TileScript : MonoBehaviour {
     public Vector3Int tmpSize;
     public Tilemap topMap;
     public Tilemap botMap;
-    public Tile[] topTile = new Tile[4];
     public Tile botTile;
 
     int width;
@@ -77,16 +78,16 @@ public class TileScript : MonoBehaviour {
                     {
                         if (terrainMap[x, y + 1] == 1)
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 4)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(0, 4)]);
                         }
                         else
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(4, 8)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(4, 8)]);
                         }
                     }
                     else
                     {
-                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(0, 4)]);
+                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(0, 4)]);
                     }
                 }
                 else if (terrainMap[x, y] == 2)
@@ -95,16 +96,16 @@ public class TileScript : MonoBehaviour {
                     {
                         if (terrainMap[x, y + 1] == 2)
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(8, 12)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(8, 12)]);
                         }
                         else
                         {
-                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(12, 16)]);
+                            topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(12, 16)]);
                         }
                     }
                     else
                     {
-                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile[Random.Range(8, 12)]);
+                        topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), tileList.topTile[Random.Range(8, 12)]);
                     }
                 }
                 else
